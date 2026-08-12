@@ -24,6 +24,9 @@ eve-ratting-tracker
   public (folder)
     index.html <- Place into this folder.
 
+    <img width="682" height="222" alt="image" src="https://github.com/user-attachments/assets/a4f011aa-ad24-455a-a1d9-732e823462a8" />
+
+
 
 Once folder is setup, open powershell as ADMINISTRATOR and go to the directory you've created.
 
@@ -37,6 +40,9 @@ const CLIENT_ID = ;
 const CLIENT_SECRET = ;
 const REDIRECT_URI = 'http://localhost:5000/auth/callback';;
 const PORT = 5000;
+
+<img width="530" height="122" alt="image" src="https://github.com/user-attachments/assets/ab387fe5-91d1-4648-ab14-11707e204c1e" />
+
 
 Enter your client ID and secret into main.js and the .env file (it may need to use both).
 
