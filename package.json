@@ -1,0 +1,38 @@
+{
+  "name": "eve-ratting-tracker",
+  "version": "1.0.0",
+  "description": "EVE Online Ratting & ISK/hr Analytics Tracker",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "sql.js": "^1.10.3"
+  },
+  "devDependencies": {
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.everattingtracker.app",
+    "productName": "EVE Ratting Tracker",
+    "files": [
+      "main.js",
+      "public/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "portable"
+    }
+  }
+}
