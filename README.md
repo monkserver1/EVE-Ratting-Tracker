@@ -18,17 +18,17 @@ Create Folder Environment
 
 Parent Folder:
 
-eve-ratting-tracker
+    eve-ratting-tracker
  
-  main.js
+        main.js
   
-  package.js
+        package.js
   
-  .env
+        .env
   
-  public (folder)
+        public (folder)
     
-    index.html <- Place into this folder.
+            index.html
 
 <img width="674" height="209" alt="image" src="https://github.com/user-attachments/assets/0eecf252-ba6d-4c85-825f-90926b6818fc" />
 <img width="609" height="261" alt="image" src="https://github.com/user-attachments/assets/28764214-4273-4f50-ad2b-4114febff551" />
