@@ -34,6 +34,7 @@ eve-ratting-tracker
 Once folder is setup, open powershell as ADMINISTRATOR and go to the directory you've created.
 
 npm install express express-session axios cors dotenv sql.js
+
 npm electron install
 
 Once done, open main.js and find:
