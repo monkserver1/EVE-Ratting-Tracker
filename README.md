@@ -55,7 +55,7 @@ Before running or building the app, you need to create an application in the EVE
 1) To launch the desktop app in development/local mode -> Open Powershell as Administrator and navigate to the folder you used for the tracker.
    * npm start
 2) Building the portable .exe
-   * npm run build`
+   * npm run build
 
 The output of the npm run build will be within the sub directory `/dist/`.
 
