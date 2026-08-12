@@ -1,67 +1,65 @@
-Requirements:
+# EVE Ratting Tracker
 
-Node.js
-Express
-Express-session
-Axios
-Cors
-Dotenv
-Sql.js
+An Electron-based desktop analytics application for EVE Online players. It automatically syncs character wallet journal entries via the ESI API, detects ratting sessions based on activity gaps, and provides detailed historical ISK/hr metrics across single or multiple accounts.
 
-EVE Developer Portal Application (Client ID, Secret Key)
-Set Dev Portal link to: http://localhost:5000/auth/callback
+---
 
+## Features
 
-Install Node: https://nodejs.org/en
+* **Multi-Account Support:** Authenticate multiple characters via EVE Online SSO.
+* **Automatic Session Detection:** Automatically groups bounty payouts and ESS escrow transfers into discrete ratting runs based on time gaps.
+* **Expanded Run Breakdown:** Click any detected run to view per-character totals, averages, and individual payout ticks.
+* **Lifetime Analytics:** Tracks total ISK earned, total transaction count, and time range recorded.
+* **Portable & Lightweight:** Uses `sql.js` (WebAssembly SQLite) for fast local data persistence with zero C++ compilation dependencies.
 
-Create Folder Environment
+---
 
-Parent Folder:
+## What's Included
 
-    eve-ratting-tracker
- 
-        main.js
-  
-        package.js
-  
-        .env
-  
-        public (folder)
-    
-            index.html
+This repository contains the complete source code as well as a pre-packaged `.zip` archive containing the exact folder structure and files required to get up and running immediately.
 
-<img width="674" height="209" alt="image" src="https://github.com/user-attachments/assets/0eecf252-ba6d-4c85-825f-90926b6818fc" />
-<img width="609" height="261" alt="image" src="https://github.com/user-attachments/assets/28764214-4273-4f50-ad2b-4114febff551" />
+---
 
+## EVE Developer Application Setup
 
+Before running or building the app, you need to create an application in the EVE Online Developer Portal to obtain your credentials:
 
+1. Navigate to the [EVE Online Developer Portal](https://developers.eveonline.com/).
+2. Log in and click **Create New Application**.
+3. Fill in the required details:
+   * **Name:** `EVE Ratting Tracker` (or your preferred name)
+   * **Connection Type:** `Authentication & API Access`
+   * **Permissions (Scopes):** Add `esi-wallet.read_character_wallet.v1`
+   * **Callback URL:** `http://localhost:5000/auth/callback`
+4. Save the application and copy your **Client ID** and **Secret Key**.
 
+---
 
+## Setup & Configuration
 
-Once folder is setup, open powershell as ADMINISTRATOR and go to the directory you've created.
+### Option 1: Using the Zip File
+1. Download and extract the `.zip` file from the repository.
+2. Open `main.js` and paste your `CLIENT_ID` and `CLIENT_SECRET` into the top configuration section:
+   ```javascript
+   const CLIENT_ID = 'YOUR_CLIENT_ID_HERE';
+   const CLIENT_SECRET = 'YOUR_CLIENT_SECRET_HERE';
+   const REDIRECT_URI = 'http://localhost:5000/auth/callback';
+   const PORT = 5000;
+3. Open or create the .env file in the root folder and add your credentials as well:
+       CLIENT_ID=YOUR_CLIENT_ID_HERE
+       CLIENT_SECRET=YOUR_CLIENT_SECRET_HERE
+       REDIRECT_URI=http://localhost:5000/auth/callback
+       PORT=5000
 
-npm install express express-session axios cors dotenv sql.js
+## Running the App
+1) To launch the desktop app in development/local mode -> Open Powershell as Administrator and navigate to the folder you used for the tracker.
+   npm start
+2) Building the portable .exe
+   npm run build
 
-npm electron install
+The output of the npm run build will be within the sub directory /dist/.
 
-Once done, open main.js and find:
+## Data & Database Storage
 
-// Hardcoded EVE Developer Credentials & Environment Variables
-const CLIENT_ID = ;
-const CLIENT_SECRET = ;
-const REDIRECT_URI = 'http://localhost:5000/auth/callback';;
-const PORT = 5000;
-
-<img width="530" height="122" alt="image" src="https://github.com/user-attachments/assets/ab387fe5-91d1-4648-ab14-11707e204c1e" />
-
-
-Enter your client ID and secret into main.js and the .env file (it may need to use both).
-
-
-Once thats setup, in powershell within the directory: npm start <- test to see if it runs.
-
-If it runs and you're able to auth your characters, you can compile into a .exe with:
-
-npm run build
-
-This will create a /dist/ folder under the parent which will contain the .exe. You can then use this .exe to open the application from now on.
+All character authentication tokens, transaction records and session data are stored locally on your machine in a SQLite database file at:
+    %APPDATA%/eve-ratting-tracker/ratting_tracker.db
