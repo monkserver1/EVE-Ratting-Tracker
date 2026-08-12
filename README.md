@@ -23,8 +23,11 @@ eve-ratting-tracker
   .env
   public (folder)
     index.html <- Place into this folder.
+<img width="674" height="209" alt="image" src="https://github.com/user-attachments/assets/0eecf252-ba6d-4c85-825f-90926b6818fc" />
+<img width="609" height="261" alt="image" src="https://github.com/user-attachments/assets/28764214-4273-4f50-ad2b-4114febff551" />
 
-    <img width="682" height="222" alt="image" src="https://github.com/user-attachments/assets/a4f011aa-ad24-455a-a1d9-732e823462a8" />
+
+
 
 
 
