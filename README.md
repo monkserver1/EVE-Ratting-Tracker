@@ -46,10 +46,10 @@ Before running or building the app, you need to create an application in the EVE
    const REDIRECT_URI = 'http://localhost:5000/auth/callback';
    const PORT = 5000;
 3. Open or create the .env file in the root folder and add your credentials as well:
-       * CLIENT_ID=YOUR_CLIENT_ID_HERE
-       * CLIENT_SECRET=YOUR_CLIENT_SECRET_HERE
-       * REDIRECT_URI=http://localhost:5000/auth/callback
-       * PORT=5000`
+   * CLIENT_ID=YOUR_CLIENT_ID_HERE
+   * CLIENT_SECRET=YOUR_CLIENT_SECRET_HERE
+   * REDIRECT_URI=http://localhost:5000/auth/callback
+   * PORT=5000
 
 ## Running the App
 1) To launch the desktop app in development/local mode -> Open Powershell as Administrator and navigate to the folder you used for the tracker.
